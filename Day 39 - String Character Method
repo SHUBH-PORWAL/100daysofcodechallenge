@@ -1,0 +1,39 @@
+QUESTION :- 
+
+String Character Method
+
+SOLUTION :-
+
+public class ap53_String_Character_Method {
+    public static void printLetters(String str) {
+        for(int i=0; i<str.length();i++){
+            System.out.print(str.charAt(i) + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        String firstName = "SHUBH";
+        String lastName = "PORWAL";
+        String fullName = firstName + " " + lastName;
+
+        printLetters(fullName);
+
+    }
+
+
+    }
+
+SOLUTION :-
+
+S H U B H   P O R W A L 
+
+
+
+
+
+
+
+
+
+
