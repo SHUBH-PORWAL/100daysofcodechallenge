@@ -1,0 +1,76 @@
+QUESTION :-
+
+Java's BitSet class implements a vector of bit values (i.e.:  () or  ()) that grows as needed, allowing us to easily manipulate bits while optimizing space (when compared to other collections). Any element having a bit value of  is called a set bit.
+
+Given  BitSets,  and , of size  where all bits in both BitSets are initialized to , perform a series of  operations. After each operation, print the number of set bits in the respective BitSets as two space-separated integers on a new line.
+
+Input Format
+
+The first line contains  space-separated integers,  (the length of both BitSets  and ) and  (the number of operations to perform), respectively.
+The  subsequent lines each contain an operation in one of the following forms:
+
+AND 
+OR 
+XOR 
+FLIP
+SET 
+In the list above,  is the integer  or , where  denotes  and  denotes .
+ is an integer denoting a bit's index in the BitSet corresponding to .
+
+For the binary operations , , and , operands are read from left to right and the BitSet resulting from the operation replaces the contents of the first operand. For example:
+
+SOLUTION :-
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int m = sc.nextInt();
+
+    BitSet b1 = new BitSet(n);
+    BitSet b2 = new BitSet(n);
+    BitSet[] bs = new BitSet[3];
+
+    bs[1] = b1; 
+    bs[2] = b2;
+
+    for (int i = 0; i < m; i++){
+        String op = sc.next();
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+
+        switch(op){
+            case("AND"):
+                bs[x].and(bs[y]);
+                break;
+            case("OR"):
+                bs[x].or(bs[y]);
+                break;
+            case("SET"):
+                bs[x].set(y);
+                break;
+            case("FLIP"):
+                bs[x].flip(y);
+                break;
+            case("XOR"):
+                bs[x].xor(bs[y]);
+        }
+        System.out.println(b1.cardinality() + " " + b2.cardinality());
+    }
+
+}
+}
+
+OUTPUT :-
+
+0 0
+1 0
+1 1
+1 2
