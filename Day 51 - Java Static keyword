@@ -1,0 +1,40 @@
+QUESTION :-
+
+ Write a java program using Static Keyword?
+ Case 1 :- Changing the Integer
+ Case2 :- Changing the Array
+ 
+ SOLUTION :-
+ 
+ public class CH07_Static_Keyword {
+
+    static void change(int a){
+        a = 98;
+    }
+
+    static void change2(int arr []){
+        arr[0] = 98;
+    }
+    static void telljoke() {
+        System.out.println("I invented a new word! /n "  +  "Plagiarism!");
+
+    }
+
+    public static void main(String[] args) {
+    //telljoke();
+        int marks [] = {52,78,98,56,89};
+         //Case 1 :- Changing the Integer
+        int x = 45;
+        change(x);
+        System.out.println(" The value of x after running change is : " +  x);
+
+        // Case 2 :-  The changing the Array
+        change2(marks);
+        System.out.println("The changing the array is : " + marks[0]);
+    }
+}
+
+Output :-
+
+The value of x after running change is : 45
+The changing the array is : 98
