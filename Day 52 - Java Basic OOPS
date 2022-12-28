@@ -1,0 +1,52 @@
+QUESTION :-
+
+BASIC OOPS PROGRAM :-
+
+SOLUTION :-
+
+class Employee{
+    int id;
+    int salary;
+    String name;
+    public void printDetails(){
+        System.out.println("My id is : " + id);
+        System.out.println("My name is : " + name);
+    }
+    public int getSalary(){
+        System.out.println("My salary is : ");
+        return salary;
+    }
+}
+public class CH08_Oops {
+    public static void main(String[] args) {
+        System.out.println("This is our First Custom class.....!! ");
+        Employee shubh = new Employee();
+        Employee saloni = new Employee();
+
+        // Setting attribute of shubh
+        shubh.id = 02;
+        shubh.salary =24;
+        shubh.name = "Shubh_Porwal";
+
+        // Setting of attribute of Saloni
+        saloni.id =30;
+        saloni.salary = 24;
+        saloni.name = "Saloni_Porwal";
+
+        // Printing the attribute
+        shubh.printDetails();
+        saloni.printDetails();
+        int salary = saloni.getSalary();
+        System.out.println(salary);
+    }
+}
+
+OUTPUT :-
+
+This is our First Custom class.....!! 
+My id is : 2
+My name is : Shubh_Porwal
+My id is : 30
+My name is : Saloni_Porwal
+My salary is : 
+24
