@@ -1,0 +1,59 @@
+QUESTION :-
+
+Write a program to Constructor in Inheritance in Java??
+
+SOLUTION :-
+
+class Base1{
+    Base1(){
+        System.out.println("I am Constructor....!!");
+    }
+    Base1(int x){
+        System.out.println("I am an Overloaded Constructor with value of x as: " + x);
+    }
+    public int x;
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+}
+
+class Derived1 extends Base1 {
+    Derived1() {
+        // super(0);
+        System.out.println("I am Derived class Constructor....!!");
+    }
+
+    Derived1(int x, int y)
+    {
+        super(x);
+        System.out.println("I am an Overloaded Constructor of derived with value of y as: " + y);
+    }
+}
+ class ChildofDerived extends Derived1{
+    ChildofDerived(){
+        System.out.println("I am a child of derived constructor");
+    }
+    ChildofDerived(int x,int y,int z){
+        super(x,y);
+        System.out.println("I am a overloaded constructor of Derived with value of z as: " + z);
+    }
+ }
+ public class CH10_constructor_in_Inheritance {
+    public static void main(String[] args) {
+       // Base1 b = new Base1();
+       // Derived1 d = new Derived1();
+       // Derived1 d = new Derived1(14,6);
+        ChildofDerived cd = new ChildofDerived(23,34,56);
+    }
+}
+
+OUTPUT :-
+
+I am an Overloaded Constructor with value of x as: 23
+I am an Overloaded Constructor of derived with value of y as: 34
+I am a overloaded constructor of Derived with value of z as: 56
