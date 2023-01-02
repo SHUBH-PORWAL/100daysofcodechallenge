@@ -1,0 +1,36 @@
+Question :-
+
+Write a program To create This Super Keyword
+
+Solution :-
+
+class EkClass{
+    int a;
+    public int getA(){
+        return a;
+    }
+    EkClass(int a){
+        this.a = a;
+    }
+    public int returnone(){
+        return 1;
+    }
+}
+class Doclass extends EkClass{
+    Doclass(int c){
+        super(c);
+        System.out.println("I am a constructor");
+    }
+}
+public class CH10_This_Super {
+    public static void main(String[] args) {
+        EkClass e = new EkClass(65);
+        Doclass d = new Doclass(5);
+        System.out.println(e.getA());
+    }
+}
+
+OUTPUT :-
+
+I am a constructor
+65
