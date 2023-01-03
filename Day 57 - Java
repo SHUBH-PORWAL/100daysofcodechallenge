@@ -1,0 +1,38 @@
+QUESTION :-
+
+Write a program to using Dynamic Method Dispatch in java ??
+
+SOLUTION :-
+
+class Phone {
+    public void greet() {
+        System.out.println("Good Morning");
+    }
+
+    public void on() {
+        System.out.println("Turning on Phone.....");
+    }
+}
+    class SmartPhone extends Phone{
+    public void swagat(){
+        System.out.println("Aapka swagat haii...");
+    }
+    public void name(){
+        System.out.println("Turning on SmartPhone....");
+    }
+}
+
+public class CH10_Dynamic_Method_dispatch {
+    public static void main(String[] args) {
+        Phone obj = new SmartPhone();
+        obj.greet();
+        obj.on();
+    }
+}
+
+OUTPUT :-
+
+Good Morning
+Turning on Phone.....
+
+
