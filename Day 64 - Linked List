@@ -1,0 +1,134 @@
+QUESTION :-
+
+Linked list insertion and deletion
+
+SOLUTION :-
+
+public class LinkedList_withScratch {
+    Node head;
+    
+    // track size 
+    private int size ;
+    LinkedList_withScratch(){
+        this.size = 0;
+    }
+    class Node{
+        String data;
+         Node next;
+
+         Node(String data){
+            this.data = data;
+            this.next = null;
+            size++;
+         }
+    }
+
+    // Add - first, last
+    public void addFirst(String data){
+        Node newNode = new Node(data);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(String data){
+        Node newNode = new Node(data);
+        if(head == null){
+           head  = newNode;
+           return;
+        }
+        Node currNode = head;
+        while(currNode.next != null){
+            currNode = currNode.next;
+        }
+        currNode.next  = newNode;
+    }
+
+    // print 
+    public void print(){
+        if(head == null){
+            System.out.println("List is empty");
+            return;
+        }
+        Node currNode = head;
+        while(currNode != null){
+            System.out.print(currNode.data + " -> ");
+            currNode = currNode.next;
+        }
+        System.out.println("Null");
+    }
+
+
+    // Delete first 
+    public void deleteFirst(){
+        if(head == null){
+            System.out.println("List is empty");
+            return ;
+        }
+        size--;
+        head = head.next;
+    }
+    
+    // delete last 
+    public void deleteLast(){
+        if(head == null){
+            System.out.println("List is empty");
+            return ;
+        }
+        size--;
+        if(head == null){
+            head =null;
+            return;
+        }
+        Node secondLast = head;
+        Node lastNode = head.next;
+        while(lastNode.next != null){
+            lastNode = lastNode.next;
+            secondLast = secondLast.next;
+        }
+        secondLast.next = null;
+    }
+
+    public int getSize(){
+        return size;
+    }
+  public static void main(String[] args) {
+    LinkedList_withScratch list = new LinkedList_withScratch();
+    list.addFirst("is");
+    list.addFirst("a");
+    list.print();
+
+    list.addLast("list");
+    list.print();
+
+    list.addFirst("This");
+    list.print();
+
+    list.deleteFirst();
+    list.print();
+
+    list.deleteLast();
+    list.print();
+
+    System.out.println(list.getSize());
+    
+    list.addFirst("This");
+    list.print();
+    
+    System.out.println(list.getSize());
+  }  
+}
+
+OUTPUT :-
+
+a -> is -> Null
+a -> is -> list -> Null
+This -> a -> is -> list -> Null
+a -> is -> list -> Null
+a -> is -> Null
+2
+This -> a -> is -> Null
+3
